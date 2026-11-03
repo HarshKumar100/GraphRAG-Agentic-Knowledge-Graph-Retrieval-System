@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark body defaults */
+body {
+  @apply bg-gray-950 text-white font-sans;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom thin dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
+}
+
+/* Message fade-in animation */
+@keyframes messageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-message-fade-in {
+  animation: messageFadeIn 0.3s ease-out forwards;
+}
+
+/* Bouncing dots for typing indicator */
+@keyframes bounce-dot {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-dot-1 {
+  animation: bounce-dot 1.2s infinite ease-in-out;
+}
+
+.animate-bounce-dot-2 {
+  animation: bounce-dot 1.2s infinite ease-in-out 0.15s;
+}
+
+.animate-bounce-dot-3 {
+  animation: bounce-dot 1.2s infinite ease-in-out 0.3s;
+}
